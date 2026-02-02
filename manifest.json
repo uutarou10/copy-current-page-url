@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Copy current page URL without tracking parameters",
   "permissions": ["clipboardWrite"],
+  "action": {
+    "default_title": "Copy URL without tracking params"
+  },
   "background": {
     "service_worker": "src/background.ts",
     "type": "module"
