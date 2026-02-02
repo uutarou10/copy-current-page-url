@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Current Page URL",
+  "version": "1.0.0",
+  "description": "Copy current page URL without tracking parameters",
+  "permissions": ["clipboardWrite"],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.ts"]
+    }
+  ],
+  "commands": {
+    "copy-clean-url": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Copy current page URL without tracking parameters"
+    }
+  }
+}
